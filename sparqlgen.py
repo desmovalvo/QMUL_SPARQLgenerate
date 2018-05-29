@@ -39,6 +39,7 @@ def translate():
         # if log="" and clear=False -> then in result we found what we need
         
         msg = json.loads(message)
+        print(msg)
         for el in msg:
             if (el["log"] == "") and (not(el["clear"])):
                 logging.debug("Results:")
@@ -56,6 +57,7 @@ def translate():
     def on_open(ws, msg = msg):
         logging.debug("Sending request to SPARQLgenerate websocket server")
         ws.send(json.dumps(msg))
+        logging.debug("Sent...")
 
     ws = websocket.WebSocketApp("wss://ci.mines-stetienne.fr/sparql-generate/transformStream",
                                 on_message = on_message,
