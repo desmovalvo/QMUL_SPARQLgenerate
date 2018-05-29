@@ -1,1 +1,1 @@
-web: python3 sparqlgen.py
+web: python3 sparqlgen.py $PORT
