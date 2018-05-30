@@ -5,6 +5,7 @@ import json
 import logging
 import websocket
 import configparser
+from os import environ
 from flask import Flask, request
 from websocket import create_connection
 
@@ -78,4 +79,4 @@ if __name__ == "__main__":
     logging.info("SPARQLgenerate service starting...")
 
     # read the config file
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=environ.get("PORT", 5000))
