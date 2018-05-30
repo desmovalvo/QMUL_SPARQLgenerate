@@ -78,4 +78,4 @@ if __name__ == "__main__":
     logging.info("SPARQLgenerate service starting...")
 
     # read the config file
-    app.run()
+    app.run(host='0.0.0.0')
